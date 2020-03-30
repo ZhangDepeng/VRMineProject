@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="be526494-2029-4110-9e3b-bffd7db4085a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/VrmineprojectApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/controller/BuildController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/controller/CoalseamController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/controller/DrillController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/controller/EquipmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/controller/FaultController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/controller/PersorientatioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/controller/SensorAndPersonInformationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/controller/SensorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/controller/TunnelController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/controller/WorkingsurfaceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/entity/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/entity/ApiResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/entity/Build.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/entity/Coalseam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/entity/Drill.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/entity/Equipment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/entity/Fault.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/entity/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/entity/Persorientatio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/entity/Sensor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/entity/Tunnel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/entity/Workingsurface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/mapper/AdminMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/mapper/BuildMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/mapper/CoalseamMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/mapper/DrillMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/mapper/EquipmentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/mapper/FaultMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/mapper/LoginMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/mapper/PersorientatioMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/mapper/SensorMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/mapper/TunnelMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/mapper/WorkingsurfaceMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service/BuildService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service/CoalseamService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service/DrillService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service/EquipmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service/FaultService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service/LoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service/PersonAlarmListAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service/PersonDataListAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service/PersonMonitorListAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service/PersonRealtimeListAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service/PersorientatioService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service/SensorAlarmListAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service/SensorCurrentListAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service/SensorDataListAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service/SensorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service/TunnelService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service/WorkingsurfaceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/serviceImpl/AdminServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/serviceImpl/BuildServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/serviceImpl/CoalseamServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/serviceImpl/DrillServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/serviceImpl/EquipmentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/serviceImpl/FaultServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/serviceImpl/LoginServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/serviceImpl/PersorientatioServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/serviceImpl/SensorServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/serviceImpl/TunnelServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/serviceImpl/WorkingsurfaceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/structure/Tree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/util/ApiResultHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/vrmine/vrmineproject/VrmineprojectApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\zdp\apache-maven-3.6.3\repository" />
+        <option name="mavenHome" value="D:/zdp/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\zdp\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1V9vTgpITyOL5vSTkko4eRqeo6x" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/vrmine/vrmineproject/service" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Desktop\vrmineproject\src\main\java\com\vrmine\vrmineproject\service" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+      <command value="mvn install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.VrmineprojectApplication">
+    <configuration name="VrmineprojectApplicationTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vrmineproject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vrmine.vrmineproject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vrmine.vrmineproject" />
+      <option name="MAIN_CLASS_NAME" value="com.vrmine.vrmineproject.VrmineprojectApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VrmineprojectApplicationTests (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vrmineproject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vrmine.vrmineproject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vrmine.vrmineproject" />
+      <option name="MAIN_CLASS_NAME" value="com.vrmine.vrmineproject.VrmineprojectApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VrmineprojectApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vrmineproject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vrmine.vrmineproject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vrmine.vrmineproject" />
+      <option name="MAIN_CLASS_NAME" value="com.vrmine.vrmineproject.VrmineprojectApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VrmineprojectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="vrmineproject" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.vrmine.vrmineproject.VrmineprojectApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.VrmineprojectApplicationTests (2)" />
+        <item itemvalue="JUnit.VrmineprojectApplicationTests (1)" />
+        <item itemvalue="JUnit.VrmineprojectApplicationTests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="be526494-2029-4110-9e3b-bffd7db4085a" name="Default Changelist" comment="" />
+      <created>1576678134540</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576678134540</updated>
+      <workItem from="1576678148525" duration="1205000" />
+      <workItem from="1576806528887" duration="2325000" />
+      <workItem from="1576830061238" duration="3221000" />
+      <workItem from="1576834432482" duration="451000" />
+      <workItem from="1576835055680" duration="4237000" />
+      <workItem from="1576928903315" duration="2108000" />
+      <workItem from="1576931881689" duration="2262000" />
+      <workItem from="1576998491992" duration="5862000" />
+      <workItem from="1577062727771" duration="17310000" />
+      <workItem from="1577095695179" duration="2122000" />
+      <workItem from="1577103283686" duration="1538000" />
+      <workItem from="1577107084444" duration="1458000" />
+      <workItem from="1577153790846" duration="11705000" />
+      <workItem from="1584014626261" duration="3221000" />
+      <workItem from="1584060272725" duration="245000" />
+      <workItem from="1584060569638" duration="670000" />
+      <workItem from="1584062898958" duration="6657000" />
+      <workItem from="1584144118234" duration="11537000" />
+      <workItem from="1584188475379" duration="473000" />
+      <workItem from="1584189240498" duration="1014000" />
+      <workItem from="1584362592189" duration="916000" />
+      <workItem from="1584435430319" duration="642000" />
+      <workItem from="1584437122284" duration="717000" />
+      <workItem from="1585101455379" duration="2800000" />
+      <workItem from="1585191107256" duration="6100000" />
+      <workItem from="1585215107079" duration="3157000" />
+      <workItem from="1585357166082" duration="1185000" />
+      <workItem from="1585359827975" duration="4925000" />
+      <workItem from="1585492079308" duration="4216000" />
+      <workItem from="1585531257438" duration="533000" />
+      <workItem from="1585535862719" duration="8381000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="22" key="#Notifications" timestamp="1584014709127">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1584014709127" />
+    <state x="413" y="119" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1584437415504">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="119" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1584437415504" />
+    <state x="255" y="45" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585561188379">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="255" y="45" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1585561188379" />
+    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser" timestamp="1585191971834">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1585191971834" />
+    <state x="529" y="253" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584062967477">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="529" y="253" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1584062967477" />
+    <state x="263" y="19" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor" timestamp="1584062964248">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="263" y="19" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor/0.0.1366.728@0.0.1366.728" timestamp="1584062964248" />
+    <state x="640" y="252" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1577062859166">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="640" y="252" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1050/-1366.0.1366.738@0.0.1920.1050" timestamp="1577062859166" />
+    <state x="304" y="123" key="FileChooserDialogImpl" timestamp="1585559084993">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="304" y="123" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585559084993" />
+    <state x="-903" y="124" key="FileChooserDialogImpl/0.0.1920.1050/-1366.0.1366.738@-1366.0.1366.738" timestamp="1577104072636" />
+    <state x="541" y="254" key="Github.ShareDialog" timestamp="1585561581995">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="541" y="254" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1585561581995" />
+    <state x="442" y="69" key="Github.UntrackedFilesDialog" timestamp="1585561613088">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="442" y="69" key="Github.UntrackedFilesDialog/0.0.1366.728@0.0.1366.728" timestamp="1585561613088" />
+    <state width="1323" height="127" key="GridCell.Tab.0.bottom" timestamp="1585562843332">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="127" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585562843332" />
+    <state width="1323" height="2" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1366.0.1366.738@-1366.0.1366.738" timestamp="1577104837823" />
+    <state width="1877" height="226" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1366.0.1366.738@0.0.1920.1050" timestamp="1577191097771" />
+    <state width="1323" height="127" key="GridCell.Tab.0.center" timestamp="1585562843332">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="127" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585562843332" />
+    <state width="1323" height="2" key="GridCell.Tab.0.center/0.0.1920.1050/-1366.0.1366.738@-1366.0.1366.738" timestamp="1577104837823" />
+    <state width="1877" height="226" key="GridCell.Tab.0.center/0.0.1920.1050/-1366.0.1366.738@0.0.1920.1050" timestamp="1577191097771" />
+    <state width="1323" height="127" key="GridCell.Tab.0.left" timestamp="1585562843332">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="127" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585562843332" />
+    <state width="1323" height="2" key="GridCell.Tab.0.left/0.0.1920.1050/-1366.0.1366.738@-1366.0.1366.738" timestamp="1577104837822" />
+    <state width="1877" height="226" key="GridCell.Tab.0.left/0.0.1920.1050/-1366.0.1366.738@0.0.1920.1050" timestamp="1577191097770" />
+    <state width="1323" height="127" key="GridCell.Tab.0.right" timestamp="1585562843332">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="127" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585562843332" />
+    <state width="1323" height="2" key="GridCell.Tab.0.right/0.0.1920.1050/-1366.0.1366.738@-1366.0.1366.738" timestamp="1577104837823" />
+    <state width="1877" height="226" key="GridCell.Tab.0.right/0.0.1920.1050/-1366.0.1366.738@0.0.1920.1050" timestamp="1577191097771" />
+    <state width="1323" height="127" key="GridCell.Tab.1.bottom" timestamp="1585562843332">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="127" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585562843332" />
+    <state width="1323" height="2" key="GridCell.Tab.1.bottom/0.0.1920.1050/-1366.0.1366.738@-1366.0.1366.738" timestamp="1577104837823" />
+    <state width="1877" height="226" key="GridCell.Tab.1.bottom/0.0.1920.1050/-1366.0.1366.738@0.0.1920.1050" timestamp="1577191097772" />
+    <state width="1323" height="127" key="GridCell.Tab.1.center" timestamp="1585562843332">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="127" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1585562843332" />
+    <state width="1323" height="2" key="GridCell.Tab.1.center/0.0.1920.1050/-1366.0.1366.738@-1366.0.1366.738" timestamp="1577104837823" />
+    <state width="1877" height="226" key="GridCell.Tab.1.center/0.0.1920.1050/-1366.0.1366.738@0.0.1920.1050" timestamp="1577191097771" />
+    <state width="1323" height="127" key="GridCell.Tab.1.left" timestamp="1585562843332">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="127" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1585562843332" />
+    <state width="1323" height="2" key="GridCell.Tab.1.left/0.0.1920.1050/-1366.0.1366.738@-1366.0.1366.738" timestamp="1577104837823" />
+    <state width="1877" height="226" key="GridCell.Tab.1.left/0.0.1920.1050/-1366.0.1366.738@0.0.1920.1050" timestamp="1577191097771" />
+    <state width="1323" height="127" key="GridCell.Tab.1.right" timestamp="1585562843332">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="127" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1585562843332" />
+    <state width="1323" height="2" key="GridCell.Tab.1.right/0.0.1920.1050/-1366.0.1366.738@-1366.0.1366.738" timestamp="1577104837823" />
+    <state width="1877" height="226" key="GridCell.Tab.1.right/0.0.1920.1050/-1366.0.1366.738@0.0.1920.1050" timestamp="1577191097771" />
+    <state x="213" y="19" key="Maven.ArtifactSearchDialog" timestamp="1585492351641">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="213" y="19" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1585492351641" />
+    <state x="323" y="61" key="NewModule_or_Project.wizard" timestamp="1584436582566">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="323" y="61" key="NewModule_or_Project.wizard/0.0.1366.728@0.0.1366.728" timestamp="1584436582566" />
+    <state x="432" y="74" key="RollbackChangesDialog" timestamp="1585561941113">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="432" y="74" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1585561941113" />
+    <state x="184" y="11" key="SettingsEditor" timestamp="1585552251295">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="11" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585552251295" />
+    <state x="259" y="16" key="SettingsEditor/0.0.1920.1050/-1366.0.1366.738@0.0.1920.1050" timestamp="1577103299408" />
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1584060278325">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584060278325" />
+    <state x="57" y="0" key="new project wizard" timestamp="1584437682480">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="57" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1584437682480" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1584111026991">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1584111026991" />
+  </component>
+</project>
