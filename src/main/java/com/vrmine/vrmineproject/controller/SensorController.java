@@ -43,7 +43,7 @@ public class SensorController {
         return ApiResultHandler.success(SensorServiceImpl.findByid(sensorID));
     }
 
-    @PutMapping(value = "/sensor",produces = { "application/json;charset=UTF-8" })
+    @PutMapping(value = "/sensor/sensorID",produces = { "application/json;charset=UTF-8" })
     public ApiResult update(@RequestBody Sensor sensor){
         return ApiResultHandler.success(SensorServiceImpl.update(sensor));
     }

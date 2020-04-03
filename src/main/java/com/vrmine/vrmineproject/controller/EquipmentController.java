@@ -43,7 +43,7 @@ public class EquipmentController {
         return ApiResultHandler.success(equipmentServiceImpl.findByid(equipmentID));
     }
 
-    @PutMapping(value = "/equipment",produces = { "application/json;charset=UTF-8" })
+    @PutMapping(value = "/equipment/equipmentID",produces = { "application/json;charset=UTF-8" })
     public ApiResult update(@RequestBody Equipment equipment){
         return ApiResultHandler.success(equipmentServiceImpl.update(equipment));
     }

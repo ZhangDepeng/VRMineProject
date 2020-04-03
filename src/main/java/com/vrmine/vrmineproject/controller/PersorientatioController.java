@@ -42,7 +42,7 @@ public class PersorientatioController {
         return ApiResultHandler.success(persorientatioServiceImplService.findByid(ID));
     }
 
-    @PutMapping(value = "/persorientatio",produces = { "application/json;charset=UTF-8" })
+    @PutMapping(value = "/persorientatio/ID",produces = { "application/json;charset=UTF-8" })
     public ApiResult update(@RequestBody Persorientatio persorientatio){
         return ApiResultHandler.success(persorientatioServiceImplService.update(persorientatio));
     }
