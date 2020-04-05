@@ -26,6 +26,6 @@ public interface SensorMapper {
 
     @Update("update sensordata set posX = #{posX}," +
             "posY = #{posY}, posZ = #{posZ},RotationX = #{RotationX},RotationY = #{RotationY}," +
-            "RotationZ = #{RotationZ},ScaleX = #{ScaleX},ScaleY = #{ScaleY},ScaleZ = #{ScaleZ},TransX = #{TransX},TransY = #{TransY},TransZ = #{TransZ} where ID = #{ID}")
+            "RotationZ = #{RotationZ},ScaleX = #{ScaleX},ScaleY = #{ScaleY},ScaleZ = #{ScaleZ},TransX = #{TransX},TransY = #{TransY},TransZ = #{TransZ} where sensorID = #{sensorID}")
     public int update(Sensor sensor);
 }
