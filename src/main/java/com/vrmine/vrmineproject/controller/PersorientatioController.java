@@ -43,6 +43,7 @@ public class PersorientatioController {
     }
 
     @PutMapping(value = "/persorientatio/ID",produces = { "application/json;charset=UTF-8" })
+    @CrossOrigin
     public ApiResult update(@RequestBody Persorientatio persorientatio){
         return ApiResultHandler.success(persorientatioServiceImplService.update(persorientatio));
     }

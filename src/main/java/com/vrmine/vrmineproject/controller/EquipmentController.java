@@ -49,6 +49,7 @@ public class EquipmentController {
 //    }
 
     @PutMapping(value = "/equipment/equipmentID/{equipmentID}",produces = { "application/json;charset=UTF-8" })
+    @CrossOrigin
     public ApiResult update(@PathVariable("equipmentID") int equipmentID) {
         int res = equipmentServiceImpl.update(equipmentID);
         if (res != 0) {
