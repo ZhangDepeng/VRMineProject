@@ -33,7 +33,7 @@ public class EquipmentServiceImpl implements EquipmentMapper {
     }
 
     @Override
-    public int update(Equipment equipment) { return equipmentMapper.update(equipment); }
+    public int update(int equipmentID) { return equipmentMapper.update(equipmentID); }
 
 
 }

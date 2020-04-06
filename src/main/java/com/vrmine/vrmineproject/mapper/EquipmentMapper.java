@@ -27,6 +27,6 @@ public interface EquipmentMapper {
     @Update("update equipmentdata set equipmentName = #{equipmentName},modelName = #{modelName},type = #{type},parameters = #{parameters},manufacturer = #{manufacturer},equipmentDate = #{equipmentDate},equipmentNum = #{equipmentNum}," +
             "position = #{position},posX = #{posX},posY = #{posY}, posZ = #{posZ},RotationX = #{RotationX},RotationY = #{RotationY}," +
             "RotationZ = #{RotationZ},ScaleX = #{ScaleX},ScaleY = #{ScaleY},ScaleZ = #{ScaleZ},TransX = #{TransX},TransY = #{TransY},TransZ = #{TransZ} where equipmentID = #{equipmentID}")
-    int update(Equipment equipment);
+    int update(int equipmentID);
 
 }

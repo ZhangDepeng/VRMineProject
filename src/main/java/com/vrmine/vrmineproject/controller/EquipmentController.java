@@ -43,8 +43,17 @@ public class EquipmentController {
         return ApiResultHandler.success(equipmentServiceImpl.findByid(equipmentID));
     }
 
-    @PutMapping(value = "/equipment/equipmentID",produces = { "application/json;charset=UTF-8" })
-    public ApiResult update(@RequestBody Equipment equipment){
-        return ApiResultHandler.success(equipmentServiceImpl.update(equipment));
+//    @PutMapping(value = "/equipment/equipmentID",produces = { "application/json;charset=UTF-8" })
+//    public ApiResult update(@RequestBody Equipment equipment){
+//        return ApiResultHandler.success(equipmentServiceImpl.update(equipment));
+//    }
+
+    @PutMapping(value = "/equipment/equipmentID/{equipmentID}",produces = { "application/json;charset=UTF-8" })
+    public ApiResult update(@PathVariable("equipmentID") int equipmentID) {
+        int res = equipmentServiceImpl.update(equipmentID);
+        if (res != 0) {
+            return ApiResultHandler.buildApiResult(200,"更新成功",res);
+        }
+        return ApiResultHandler.buildApiResult(400,"更新失败",res);
     }
 }
