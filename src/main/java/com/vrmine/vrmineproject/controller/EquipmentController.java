@@ -50,7 +50,7 @@ public class EquipmentController {
 
     @PutMapping(value = "/equipment/equipmentID",produces = { "application/json;charset=UTF-8" })
     @CrossOrigin
-    public ApiResult update( Equipment equipment) {
+    public ApiResult update(@RequestBody Equipment equipment) {
         int res = equipmentServiceImpl.update(equipment);
         if (res != 0) {
             return ApiResultHandler.buildApiResult(200,"更新成功",res);

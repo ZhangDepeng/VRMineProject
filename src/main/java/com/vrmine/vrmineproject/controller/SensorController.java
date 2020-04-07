@@ -45,7 +45,7 @@ public class SensorController {
 
     @PutMapping(value = "/sensor/sensorID",produces = { "application/json;charset=UTF-8" })
     @CrossOrigin
-    public ApiResult update(Sensor sensor){
+    public ApiResult update(@RequestBody Sensor sensor){
         return ApiResultHandler.success(SensorServiceImpl.update(sensor));
     }
 }
