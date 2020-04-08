@@ -49,14 +49,14 @@ public class SensorAndPersonInformationController {
             @RequestParam(name = "sidx", defaultValue = "SENSOR_NAME") String sidx,
             @RequestParam(name = "sord", defaultValue = "asc") String sord,
             @RequestParam(name = "MINE_ID",defaultValue = "430481010327",value = "MINE_ID") String MINE_ID,
-            @RequestParam(name = "SENSOR_ID",defaultValue = "",value = "SENSOR_ID") String SENSOR_ID,
+            @RequestParam(name = "MEASURE_ID",defaultValue = "",value = "MEASURE_ID") String MEASURE_ID,
             @RequestParam(name = "start_TIME",defaultValue = "",value = "start_TIME") String start_TIME,
             @RequestParam(name = "end_TIME",defaultValue = "",value = "end_TIME") String end_TIME)
     {
         LocalDateTime localDateTime = LocalDateTime.now();
         Map<String, String> queryJson = new HashMap<String, String>();
         queryJson.put("MINE_ID", MINE_ID);
-        queryJson.put("SENSOR_ID", SENSOR_ID);
+        queryJson.put("MEASURE_ID", MEASURE_ID);
         queryJson.put("start_TIME", start_TIME);
         queryJson.put("end_TIME", end_TIME);
         JSONObject jsonObject = JSONObject.fromObject(queryJson);
@@ -76,18 +76,18 @@ public class SensorAndPersonInformationController {
             @RequestParam(name = "sidx", defaultValue = "TIME") String sidx,
             @RequestParam(name = "sord", defaultValue = "desc") String sord,
             @RequestParam(name = "MINE_ID",defaultValue = "430481010327",value = "MINE_ID") String MINE_ID,
-            @RequestParam(name = "SENSOR_ID",defaultValue = "",value = "SENSOR_ID") String SENSOR_ID,
-            @RequestParam(name = "start_TIME",defaultValue = "2019-10-6",value = "start_TIME") String start_TIME,
+            @RequestParam(name = "MEASURE_ID",defaultValue = "",value = "MEASURE_ID") String MEASURE_ID,
+            @RequestParam(name = "start_TIME",defaultValue = "2019-12-26",value = "start_TIME") String start_TIME,
             @RequestParam(name = "end_TIME",defaultValue = "2020-1-06",value = "end_TIME") String end_TIME)
     {
         LocalDateTime localDateTime = LocalDateTime.now();
         Map<String, String> queryJson = new HashMap<String, String>();
         queryJson.put("MINE_ID", MINE_ID);
-        queryJson.put("SENSOR_ID", SENSOR_ID);
+        queryJson.put("MEASURE_ID", MEASURE_ID);
         queryJson.put("start_TIME", start_TIME);
         queryJson.put("end_TIME", end_TIME);
         JSONObject jsonObject = JSONObject.fromObject(queryJson);
-        ResponseEntity<String> htmlStr = sensorCurrentListAPI.getSensorCurrentList(_search,nd,rows,page,sidx,sord,jsonObject.toString());
+        ResponseEntity<String> htmlStr = sensorDataListAPI.getdataList(_search,nd,rows,page,sidx,sord,jsonObject.toString());
         System.out.println("单传感器日监测数据"+localDateTime);
         return htmlStr;
     }
@@ -113,7 +113,7 @@ public class SensorAndPersonInformationController {
         queryJson.put("MINE_ID", MINE_ID);
         queryJson.put("MEASURE_TYPE", MEASURE_TYPE);
         JSONObject jsonObject = JSONObject.fromObject(queryJson);
-        ResponseEntity<String> htmlStr = sensorCurrentListAPI.getSensorCurrentList(_search,nd,rows,page,sidx,sord,jsonObject.toString());
+        ResponseEntity<String> htmlStr = sensorAlarmListAPI.getSensorAlarmList(_search,nd,rows,page,sidx,sord,jsonObject.toString());
         System.out.println("单煤矿实时报警数据"+localDateTime);
         return htmlStr;
     }
