@@ -10,6 +10,5 @@ import java.util.List;
  */
 public interface TunnelService {
     public List<Tunnel> findAll();
-    public List<Tunnel> findByName();
-    public List<Tunnel> findTunnelName();
+    public List<Tunnel> findByName(String tunnelName);/*修改人：pgl*/
 }

@@ -19,8 +19,6 @@ public class TunnelServiceImpl implements TunnelService{
 
     @Override
     public List<Tunnel> findAll() {return tunnelMapper.findAll();}
-    @Override
-    public List<Tunnel> findByName() {return tunnelMapper.findByName();}
-    @Override
-    public List<Tunnel> findTunnelName() {return tunnelMapper.findTunnelName();}
+    @Override  /*修改人：pgl*/
+    public List<Tunnel> findByName(String tunnelName) {return tunnelMapper.findByName(tunnelName);}
 }
