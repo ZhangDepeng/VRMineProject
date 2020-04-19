@@ -1,0 +1,51 @@
+{
+  "name": "vrmine",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "@koa/cors": "^2.2.3",
+    "@types/three": "^0.103.2",
+    "axios": "^0.19.0",
+    "cesium": "^1.59.0",
+    "cesium-navigation-es6": "^1.0.8",
+    "core-js": "2.6.5",
+    "css-loader": "3.2.0",
+    "echarts": "^4.7.0",
+    "iview": "3.4.2",
+    "jquery": "^3.4.1",
+    "less-loader": "5.0.0",
+    "view-design": "^4.0.2",
+    "vue": "2.6.10",
+    "vue-axios": "^2.1.5",
+    "vue-cookies": "^1.5.13",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1",
+    "xlsx": "^0.15.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.10.0",
+    "@vue/cli-plugin-eslint": "^3.10.0",
+    "@vue/cli-plugin-unit-mocha": "^3.10.0",
+    "@vue/cli-service": "^3.10.0",
+    "@vue/eslint-config-prettier": "^5.0.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.1.2",
+    "copy-webpack-plugin": "^5.0.4",
+    "eslint": "^5.16.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "prettier": "^1.18.2",
+    "sass": "^1.18.0",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.10",
+    "wangeditor": "^3.1.1",
+    "webpack": "^4.41.0"
+  }
+}
