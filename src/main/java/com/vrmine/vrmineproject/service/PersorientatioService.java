@@ -12,5 +12,6 @@ public interface PersorientatioService {
     public List<Persorientatio> findAll();
     public Persorientatio findByname(String Name);
     public Persorientatio findByid(int ID);
+    public Persorientatio findByInstallationsite(String Installationsite);
     public int update(Persorientatio persorientatio);
 }

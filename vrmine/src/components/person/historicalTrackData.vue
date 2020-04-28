@@ -11,41 +11,42 @@
 }
 </style>
 <template>
-  <div class="demo">
-    <div class="demo-top">
-      <div style="float: left;width:200px">
-        <Input v-model="inputName" placeholder="请输入姓名">
-          <span slot="prepend">关键字：</span>
-        </Input>
+  
+    <div class="demo">
+      <div class="demo-top">
+        <div style="float: left;width:200px">
+          <Input v-model="inputName" placeholder="请输入姓名">
+            <span slot="prepend">关键字：</span>
+          </Input>
+        </div>
+        <Col span="6" style="margin-left:10px">
+          <DatePicker
+            type="daterange"
+            placement="bottom-end"
+            placeholder="Select date"
+            style="width: 200px"
+            :value="date"
+            @on-change="handleChange"
+          ></DatePicker>
+        </Col>
+        <Button type="primary" @click="searchData()" icon="ios-search">查询</Button>
+        <Button type="primary" style="float:right" @click="show(row)">历史轨迹动画回放</Button>
       </div>
-      <Col span="6" style="margin-left:10px">
-        <DatePicker
-          type="daterange"
-          placement="bottom-end"
-          placeholder="Select date"
-          style="width: 200px"
-          :value="date"
-          @on-change="handleChange"
-        ></DatePicker>
-      </Col>
-      <Button type="primary" @click="searchData()" icon="ios-search">查询</Button>
-      <Button type="primary" style="float:right" @click="show(row)">历史轨迹动画回放</Button>
-    </div>
-    <div class="demo-table">
-      <Table height="450" :data="tableData" :columns="columns1" border></Table>
-      <div style="margin: 10px;overflow: hidden">
-        <div style="float: right;">
-          <Page
-            :total="dataCount"
-            :page-size="pageSize"
-            show-total
-            @on-change="changePage"
-            show-elevator
-          ></Page>
+      <div class="demo-table">
+        <Table height="450" :loading="loading" :data="tableData" :columns="columns1" border></Table>
+        <div style="margin: 10px;overflow: hidden">
+          <div style="float: right;">
+            <Page
+              :total="dataCount"
+              :page-size="pageSize"
+              show-total
+              @on-change="changePage"
+              show-elevator
+            ></Page>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -53,9 +54,9 @@ export default {
   data() {
     return {
       date: [],
-      systemDate: "",
       inputName: "",
       personMonitorList: {},
+      loading: true,
       pageSize: 10,
       dataCount: 0,
       tableData: [],
@@ -130,12 +131,12 @@ export default {
       ]
     };
   },
-  mounted() {
+  created() {
     this.addDate();
     this.paramData = {
       name: this.xxxData,
-      start: this.systemDate,
-      end: this.systemDate
+      start: this.date[0],
+      end: this.date[1]
     };
 
     // console.log(this.paramData);
@@ -150,9 +151,11 @@ export default {
       month = month < 10 ? "0" + month : month;
       var date = nowDate.getDate();
       date = date < 10 ? "0" + date : date;
-      this.systemDate = year + "-" + month + "-" + date;
+      var systemDate = year + "-" + month + "-" + date;
+      this.date = [systemDate,systemDate]
     },
     searchData() {
+      this.loading = true;
       var name = this.inputName;
       var start = this.date[0];
       var end = this.date[1];
@@ -180,6 +183,7 @@ export default {
           } else {
             this.tableData = this.personMonitorList.slice(0, this.pageSize);
           }
+          this.loading = false
         })
         .catch(error => {});
     },

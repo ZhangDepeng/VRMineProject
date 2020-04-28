@@ -29,7 +29,7 @@
           @on-change="handleChange"
         ></DatePicker>
       </Col>
-      <Button type="primary" @click="searchData()" icon="ios-search">查询</Button>
+      <Button type="primary" @click="searchData()" icon="ios-search" >查询</Button>
     </div>
     <div class="demo-table">
       <Modal
@@ -43,7 +43,7 @@
       >
         <historical-track-data v-if="showDialog" :xxxData="xxxData"></historical-track-data>
       </Modal>
-      <Table height="450" :data="tableData" :columns="columns1" border>
+      <Table height="450" :loading="loading" :data="tableData" :columns="columns1" border>
         <template slot-scope="{ row}" slot="operating">
           <Button type="primary" style="margin-right: 5px" @click="openModal(row)">历史轨迹</Button>
         </template>
@@ -69,8 +69,8 @@ export default {
   data() {
     return {
       date: [],
-      systemDate: "",
       inputName: "",
+      loading: true,
       showDialog: false,
       personMonitorList: {},
       pageSize: 10,
@@ -156,11 +156,11 @@ export default {
       ]
     };
   },
-  mounted() {
+  created() {
     this.addDate();
     this.paramData = {
-      start: this.systemDate,
-      end: this.systemDate
+      start: this.date[0],
+      end: this.date[1]
     };
     // console.log(this.paramData);
     this.getpersonMonitorList(this.paramData);
@@ -171,10 +171,11 @@ export default {
       var nowDate = new Date();
       var year = nowDate.getFullYear();
       var month = nowDate.getMonth() + 1;
-      month = month < 10 ? ("0" + month) : month;
+      month = month < 10 ? "0" + month : month;
       var date = nowDate.getDate();
-      date = date < 10 ? ("0" + date) : date;
-      this.systemDate = year + "-"  + month + "-" + date;
+      date = date < 10 ? "0" + date : date;
+      var systemDate = year + "-" + month + "-" + date;
+      this.date = [systemDate,systemDate]
     },
     openModal(row) {
       this.showDialog = true;
@@ -182,6 +183,7 @@ export default {
       // console.log(this.xxxData);
     },
     searchData() {
+      this.loading = true;
       var name = this.inputName;
       var start = this.date[0];
       var end = this.date[1];
@@ -208,6 +210,7 @@ export default {
           } else {
             this.tableData = this.personMonitorList.slice(0, this.pageSize);
           }
+          this.loading = false;
         })
         .catch(error => {});
     },

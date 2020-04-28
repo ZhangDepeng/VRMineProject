@@ -17,8 +17,10 @@ public class TunnelServiceImpl implements TunnelService{
     @Autowired
     private TunnelMapper tunnelMapper;
 
-    @Override
-    public List<Tunnel> findAll() {return tunnelMapper.findAll();}
+    @Override /*修改人：pgl*/
+    public List<Tunnel> findAll(String mineTable) {return tunnelMapper.findAll(mineTable);}
     @Override  /*修改人：pgl*/
     public List<Tunnel> findByName(String tunnelName) {return tunnelMapper.findByName(tunnelName);}
+    @Override
+    public List<Tunnel> findTunnelName() {return tunnelMapper.findTunnelName();}
 }

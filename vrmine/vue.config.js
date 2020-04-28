@@ -14,7 +14,7 @@ module.exports = {
     devServer: {
         open: true, //是否自动弹出浏览器页面
         host: "localhost",
-        port: 8090, //修改服务端口号
+        port: 8082, //修改服务端口号
         https: false,   //是否使用https协议
         hotOnly: false, //是否开启热更新
         proxy: {

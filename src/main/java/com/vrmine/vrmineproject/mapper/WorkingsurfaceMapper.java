@@ -10,6 +10,7 @@ import java.util.List;
  * @author zdp
  * @data 2019/12/14-22:20
  */
+@Repository
 @Mapper
 public interface WorkingsurfaceMapper {
 

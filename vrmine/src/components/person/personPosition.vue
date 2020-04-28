@@ -1,6 +1,6 @@
 <style scoped>
   .demo-split {
-    height: 600px;
+    height: 550px;
     width: 100%;
     border: 1px solid #dcdee2;
   }
@@ -41,7 +41,7 @@
         <Modal v-model="showDialog" :z-index="111111" title="人员定位历史数据" draggable scrollable footer-hide width="1000px">
           <historical-track-data v-if="showDialog" :xxxData="xxxData"></historical-track-data>
         </Modal>
-        <Table height="420" size="small" :data="tableData" :columns="columns1" border @on-row-dblclick="rowClick">
+        <Table height="420" size="small" :loading="loading" :data="tableData" :columns="columns1" border @on-row-dblclick="rowClick">
           <template slot-scope="{ row }" slot="operating">
             <Button type="primary" style="margin-right: 5px" @click="openModal(row)">历史轨迹</Button>
           </template>
@@ -66,6 +66,7 @@
         split1: 0.2,
         pageSize: 10,
         dataCount: 0,
+        loading: true,
         showDialog: false,
         xxxData: null,
         tableData: [],
@@ -174,7 +175,7 @@
         }
       }
     },
-    mounted() {
+    created() {
       this.getpersonRealTimeList();
     },
     methods: {
@@ -202,6 +203,7 @@
             } else {
               this.tableData = this.personRealTimeData.slice(0, this.pageSize);
             }
+            this.loading = false
           })
           .catch(error => { });
       },
@@ -234,7 +236,7 @@
               3 * 100000 + this.personId.id
             ); //tableType*100000
             // console.log(getByIdEntity)
-            this.viewer.trackedEntity = getByIdEntity;
+            this.viewer.zoomTo(getByIdEntity);
           })
           .catch(error => { });
       },

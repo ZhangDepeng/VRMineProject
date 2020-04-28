@@ -1,6 +1,6 @@
 <style scoped>
   .demo{
-        height: 500px;
+        height: 550px;
         width: 100%;
         border: 1px solid #dcdee2;
     }
@@ -94,7 +94,7 @@ export default {
       ]
     };
   },
-  mounted() {
+  created() {
     this.getPersonAlarm();
   },
 

@@ -1,6 +1,5 @@
 package com.vrmine.vrmineproject.mapper;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
 import com.vrmine.vrmineproject.entity.Persorientatio;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -23,6 +22,9 @@ public interface PersorientatioMapper {
 
     @Select("select * from persorientatio where ID = #{ID}")
     public Persorientatio findByid(int ID);
+
+    @Select("select ID from persorientatio where Installationsite = #{Installationsite}")
+    public Persorientatio findByInstallationsite(String Installationsite);
 
     @Update("update persorientatio set posX = #{posX}," +
             "posY = #{posY}, posZ = #{posZ},RotationX = #{RotationX},RotationY = #{RotationY}," +

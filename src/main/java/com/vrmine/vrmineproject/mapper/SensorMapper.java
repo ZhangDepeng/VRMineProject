@@ -12,6 +12,7 @@ import java.util.List;
  * @author zdp
  * @data 2019/12/11-20:07
  */
+@Repository
 @Mapper
 public interface SensorMapper {
 

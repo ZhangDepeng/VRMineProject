@@ -33,5 +33,10 @@ public class PersorientatioServiceImpl implements PersorientatioService {
     }
 
     @Override
+    public Persorientatio findByInstallationsite(String Installationsite) {
+        return persorientatioMapper.findByInstallationsite(Installationsite);
+    }
+
+    @Override
     public int update(Persorientatio persorientatio) { return persorientatioMapper.update(persorientatio); }
 }

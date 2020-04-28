@@ -166,13 +166,12 @@
         }
       }
     },
-    mounted() {
-      this.getEquipment();
-    },
     created(){
       //获取用户参数
        this.iseditable=this.$parent.$parent.$parent.$parent.$parent.$parent.$parent.$parent.iseditable;
        this.mineid=this.$parent.$parent.$parent.$parent.$parent.$parent.$parent.$parent.mineid;
+
+       this.getEquipment();
        
     },
     methods: {

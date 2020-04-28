@@ -4,7 +4,7 @@ import com.vrmine.vrmineproject.entity.Admin;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
-
+@Repository
 @Mapper
 public interface AdminMapper {
 

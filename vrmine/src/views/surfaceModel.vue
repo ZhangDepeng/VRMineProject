@@ -54,7 +54,7 @@ export default {
           orientation: orientation,
           
           model: {
-            uri: "model3D/CesiumBalloon/model2.gltf",
+            uri: "model3D/CesiumBalloon/model.gltf",
           }
         });
         this.viewer.zoomTo(this.viewer.entities);

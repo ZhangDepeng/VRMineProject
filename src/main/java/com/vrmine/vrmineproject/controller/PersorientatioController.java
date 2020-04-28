@@ -37,9 +37,15 @@ public class PersorientatioController {
     }
 
     @GetMapping(value = "/persorientatio/ID/{ID}",produces = { "application/json;charset=UTF-8" })
-    public ApiResult findBy(@PathVariable("ID") int ID){
+    public ApiResult findByid(@PathVariable("ID") int ID){
         System.out.println("根据ID查找检测模型"+localDateTime);
         return ApiResultHandler.success(persorientatioServiceImplService.findByid(ID));
+    }
+
+    @GetMapping(value = "/persorientatio/Installationsite/{Installationsite}",produces = { "application/json;charset=UTF-8" })
+    public ApiResult findByInstallationsite(@PathVariable("Installationsite") String Installationsite){
+        System.out.println("根据Installationsite查找检测模型ID"+localDateTime);
+        return ApiResultHandler.success(persorientatioServiceImplService.findByInstallationsite(Installationsite));
     }
 
     @PutMapping(value = "/persorientatio/ID",produces = { "application/json;charset=UTF-8" })

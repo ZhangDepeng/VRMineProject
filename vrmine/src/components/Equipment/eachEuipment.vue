@@ -67,8 +67,6 @@
       //     this.isEdited = false;
       //     this.isReaded = true;         
       //  }    
-    },
-    mounted() {
       var id = this.xxxData;
       this.getEachEquipment(id);
       

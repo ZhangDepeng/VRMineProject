@@ -77,10 +77,7 @@
       // 获取用户参数
        this.iseditable=this.$parent.$parent.iseditable;
        //alert(this.iseditable);
-    },
-
-    mounted() {
-      
+  
       var id = this.xxxData;
       var getByIdEntity = this.viewer.entities.getById(id);
       this.viewer.zoomTo(getByIdEntity);

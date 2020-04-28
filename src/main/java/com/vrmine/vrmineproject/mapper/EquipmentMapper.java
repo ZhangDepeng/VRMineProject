@@ -12,6 +12,7 @@ import java.util.List;
  * @author zdp
  * @data 2019/12/11-18:46
  */
+@Repository
 @Mapper
 public interface EquipmentMapper {
 

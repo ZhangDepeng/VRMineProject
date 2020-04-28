@@ -51,7 +51,7 @@
                         footer-hide
                         width= 1000px
                       >
-                      <personPosition :viewer="viewer"/>
+                      <personPosition :viewer="viewer" v-if="showModal"/>
                     </Modal>
                   <Button size="large" style="border:none;" long @click="showHistoricalData = true">历史数据查询</Button>
                     <Modal
@@ -62,7 +62,7 @@
                         footer-hide
                         width= 1000px
                       >
-                      <historicalData :viewer="viewer"/>
+                      <historicalData :viewer="viewer" v-if="showHistoricalData"/>
                     </Modal>
                   <Button size="large" style="border:none;" long @click="showPersonAlarm = true">人员定位报警</Button>
                     <Modal
@@ -73,7 +73,7 @@
                         footer-hide
                         width= 1000px
                       >
-                      <personAlarm/>
+                      <personAlarm v-if="showPersonAlarm"/>
                     </Modal>
                   </MenuGroup>
               </Submenu>
@@ -261,7 +261,7 @@
                         width= 800px
                         :z-index="1"
                       >
-                      <euipmentModal :viewer="viewer"/>
+                      <euipmentModal :viewer="viewer" v-if="showEuipmentModal"/>
                     </Modal>
                   <Button size="large" style="border:none;" long @click="showPhoneModal = true">井下电话管理</Button>
                     <Modal
@@ -272,7 +272,7 @@
                         footer-hide
                         width= 800px
                       >
-                      <phoneModal :viewer="viewer"/>
+                      <phoneModal :viewer="viewer" v-if="showPhoneModal"/>
                     </Modal>
                   </MenuGroup>
   
@@ -471,17 +471,17 @@
     created(){
       
         //获取用户参数，通过判断参数来进行用户认证
-     // this.authorized = this.$utils.getUrlKey("authorized");
-      //if (this.authorized==null) {//缺失参数，拒绝访问
-      //    alert("缺失参数");    
-      //    this.$router.replace({path: "/404"});
-     // } else if(this.authorized=="user"||"admin"){  //参数正确，继而获取其他参数
-      //    this.mineid = this.$utils.getUrlKey("mineid");
+    //  this.authorized = this.$utils.getUrlKey("authorized");
+     // if (this.authorized==null) {//缺失参数，拒绝访问
+   //       alert("缺失参数");    
+    //      this.$router.replace({path: "/404"});
+   //   } else if(this.authorized=="user"||"admin"){  //参数正确，继而获取其他参数
+    //      this.mineid = this.$utils.getUrlKey("mineid");
       //    this.iseditable = this.$utils.getUrlKey("iseditable");         
-      //  }else{//参数错误，拒绝访问
-       //   alert("参数错误");    
-       //   this.$router.replace({path: "/404"});
-       // }                       
+     //   }else{//参数错误，拒绝访问
+     //     alert("参数错误");    
+     //     this.$router.replace({path: "/404"});
+      //  }                       
     },
 
     methods: {

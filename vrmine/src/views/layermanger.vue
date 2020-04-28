@@ -4,6 +4,7 @@
       <div style="position:relative; left:20px;">
         <SurefaceShow :viewer="viewer" />
         <TunnelShow :viewer="viewer" />
+         <UndergroundMode :viewer="viewer" />
       </div>
       <Tree :data="treeData" :render="renderContent" @on-check-change="checkItem" @on-select-change="clickItem"
         show-checkbox>
@@ -21,6 +22,7 @@
   import TunnelShow from "./TunnelShow.vue";
   import SurefaceShow from "./surfaceModel.vue";
   import Modelmodify from "./modelModify.vue";
+  import UndergroundMode from "./UndergroundMode.vue";
   export default {
     data() {
       return {
@@ -96,7 +98,8 @@
     components: {
       TunnelShow,
       SurefaceShow,
-      Modelmodify
+      Modelmodify,
+      UndergroundMode
     },
     props: {
       // API URL
@@ -251,31 +254,25 @@
       },
       checkItem(selectedArr, selectedItem) {
         // console.log("===selectedItem.checked===" + selectedItem.checked);
+        if (selectedItem.checked == false) {
+          // console.log(selectedItem.children)
+          selectedItem.children.forEach(it =>{
+            this.viewer.entities.removeById(it.id)
+          })
+          return;
+        }
         var modelData = [];
         if (selectedItem.title == "机电设备") {
-          if (selectedItem.checked == false) {
-            this.viewer.entities.removeAll();
-            return;
-          }
           modelData = this.equipmentData;
           // console.log("===equipmentData" + modelData);
         } else if (selectedItem.title == "人员定位") {
-          if (selectedItem.checked == false) {
-            this.viewer.entities.removeAll();
-            return;
-          }
           modelData = this.persorientatioData;
           // console.log("===persorientatioData" + modelData);
         } else if (selectedItem.title == "监控模型") {
-          if (selectedItem.checked == false) {
-            this.viewer.entities.removeAll();
-            return;
-          }
           modelData = this.sensorData;
           // console.log("===sensorData" + modelData);
         }
 
-        // this.viewer.entities.removeAll();
         modelData.forEach(it => {
           var position = Cesium.Cartesian3.fromDegrees(it.posY, it.posX, it.posZ);
           var heading = Cesium.Math.toRadians(it.rotationY);//俯仰角

@@ -7,6 +7,7 @@
 <script src = "public\Build\Cesium\Cesium.js"></script>
 <script>
 // import Cesium from "cesium/Cesium.js";
+import Texture from "./123.jpg";
 export default {
   data() {
     return {
@@ -116,7 +117,7 @@ export default {
                   polylineVolume : {
                       positions :Cesium.Cartesian3.fromDegreesArrayHeights(dest[m].data2), 
                       shape : computeCircle(1.7,1.6999),
-                      material : Cesium.Color.RED
+                      material :Texture
                   },
 
                 });
@@ -134,7 +135,7 @@ export default {
                           new Cesium.Cartesian2(-1.7, 1.7),
                       ],
                   cornerType : Cesium.CornerType.ROUNDED ,
-                  material :Cesium.Color.GREEN.withAlpha(0.5) ,
+                  material   : Texture
                   // outline : true,
                   // outlineColor : Cesium.Color.BLUE
               }

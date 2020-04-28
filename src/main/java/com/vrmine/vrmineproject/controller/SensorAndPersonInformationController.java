@@ -4,11 +4,16 @@ import com.vrmine.vrmineproject.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 
 /**
@@ -47,15 +52,17 @@ public class SensorAndPersonInformationController {
             @RequestParam(name = "page", defaultValue = "1") Integer page,
             @RequestParam(name = "sidx", defaultValue = "SENSOR_NAME") String sidx,
             @RequestParam(name = "sord", defaultValue = "asc") String sord,
-            @RequestParam(name = "MINE_ID",defaultValue = "430481010327",value = "MINE_ID") String MINE_ID,
-            @RequestParam(name = "MEASURE_ID",defaultValue = "",value = "MEASURE_ID") String MEASURE_ID,
+            @RequestParam(name = "MINE_ID",defaultValue = "430481012074",value = "MINE_ID") String MINE_ID,
+            @RequestParam(name = "SENSOR_ID",defaultValue = "",value = "SENSOR_ID") String SENSOR_ID,
+            @RequestParam(name = "SENSOR_NAME",defaultValue = "",value = "SENSOR_NAME") String SENSOR_NAME,
             @RequestParam(name = "start_TIME",defaultValue = "",value = "start_TIME") String start_TIME,
             @RequestParam(name = "end_TIME",defaultValue = "",value = "end_TIME") String end_TIME)
     {
         LocalDateTime localDateTime = LocalDateTime.now();
         Map<String, String> queryJson = new HashMap<String, String>();
         queryJson.put("MINE_ID", MINE_ID);
-        queryJson.put("MEASURE_ID", MEASURE_ID);
+        queryJson.put("SENSOR_ID", SENSOR_ID);
+        queryJson.put("SENSOR_NAME", SENSOR_NAME);
         queryJson.put("start_TIME", start_TIME);
         queryJson.put("end_TIME", end_TIME);
         JSONObject jsonObject = JSONObject.fromObject(queryJson);
@@ -74,21 +81,23 @@ public class SensorAndPersonInformationController {
             @RequestParam(name = "page", defaultValue = "1") Integer page,
             @RequestParam(name = "sidx", defaultValue = "TIME") String sidx,
             @RequestParam(name = "sord", defaultValue = "desc") String sord,
-            @RequestParam(name = "MINE_ID",defaultValue = "430481010327",value = "MINE_ID") String MINE_ID,
+            @RequestParam(name = "MINE_ID",defaultValue = "430481012074",value = "MINE_ID") String MINE_ID,
             @RequestParam(name = "MEASURE_ID",defaultValue = "",value = "MEASURE_ID") String MEASURE_ID,
-            @RequestParam(name = "start_TIME",defaultValue = "2019-12-26",value = "start_TIME") String start_TIME,
+            @RequestParam(name = "SENSOR_ID",defaultValue = "",value = "SENSOR_ID") String SENSOR_ID,
+            @RequestParam(name = "start_TIME",defaultValue = "2019-10-6",value = "start_TIME") String start_TIME,
             @RequestParam(name = "end_TIME",defaultValue = "2020-1-06",value = "end_TIME") String end_TIME)
     {
         LocalDateTime localDateTime = LocalDateTime.now();
         Map<String, String> queryJson = new HashMap<String, String>();
         queryJson.put("MINE_ID", MINE_ID);
-        queryJson.put("MEASURE_ID", MEASURE_ID);
+        queryJson.put("SENSOR_ID", SENSOR_ID);
         queryJson.put("start_TIME", start_TIME);
         queryJson.put("end_TIME", end_TIME);
         JSONObject jsonObject = JSONObject.fromObject(queryJson);
         ResponseEntity<String> htmlStr = sensorDataListAPI.getdataList(_search,nd,rows,page,sidx,sord,jsonObject.toString());
         System.out.println("单传感器日监测数据"+localDateTime);
         return htmlStr;
+
     }
 
 
@@ -102,7 +111,7 @@ public class SensorAndPersonInformationController {
             @RequestParam(name = "sord", defaultValue = "desc") String sord,
             @RequestParam(name = "start_TIME",defaultValue = "2019-10-06",value = "start_TIME") String start_TIME,
             @RequestParam(name = "end_TIME",defaultValue = "2020-1-06",value = "end_TIME") String end_TIME,
-            @RequestParam(name = "MINE_ID",defaultValue = "430481010327",value = "MINE_ID") String MINE_ID,
+            @RequestParam(name = "MINE_ID",defaultValue = "430481012074",value = "MINE_ID") String MINE_ID,
             @RequestParam(name = "MEASURE_TYPE",defaultValue = "",value = "MEASURE_TYPE") String MEASURE_TYPE)
     {
         LocalDateTime localDateTime = LocalDateTime.now();
@@ -120,7 +129,7 @@ public class SensorAndPersonInformationController {
     @GetMapping(value = "/personAlarmList-info",produces = { "application/json;charset=UTF-8" })
     ResponseEntity<String> getPersonAlarmList(
             @RequestParam(name = "page", defaultValue = "1") Integer page,
-            @RequestParam(name = "queryJson", defaultValue = "{\"mine\":\"430481010327\",\"start\":\"2019-12-20\",\"end\":\"2019-12-27\"}") String queryJson,
+            @RequestParam(name = "queryJson", defaultValue = "{\"mine\":\"430481012074\",\"start\":\"2019-12-20\",\"end\":\"2019-12-27\"}") String queryJson,
             @RequestParam(name = "_search", defaultValue = "false") String _search,
             @RequestParam(name = "nd", defaultValue = "1567666939530") String nd,
             @RequestParam(name = "rows", defaultValue = "300") Integer rows,
@@ -141,7 +150,7 @@ public class SensorAndPersonInformationController {
             @RequestParam(name = "page", defaultValue = "1") Integer page,
             @RequestParam(name = "sidx", defaultValue = "MINE_ID ASC,IN_TIME desc,STAFF_ID") String sidx,
             @RequestParam(name = "sord", defaultValue = "asc") String sord,
-            @RequestParam(name = "mine",defaultValue = "430481010327",value = "mine") String mine,
+            @RequestParam(name = "mine",defaultValue = "430481012074",value = "mine") String mine,
             @RequestParam(name = "start",defaultValue = "2019-12-20",value = "start") String start,
             @RequestParam(name = "end",defaultValue = "2019-12-27",value = "end") String end,
             @RequestParam(name = "name",defaultValue = "",value = "name") String name
@@ -161,13 +170,13 @@ public class SensorAndPersonInformationController {
 
     @GetMapping(value = "/personMonitorList-info",produces = { "application/json;charset=UTF-8" })
     ResponseEntity<String> getPersonMonitorList(
-            @RequestParam(name = "mine",defaultValue = "430481010327",value = "mine") String mine,
+            @RequestParam(name = "mine",defaultValue = "430481012074",value = "mine") String mine,
             @RequestParam(name = "start",defaultValue = "2019-12-20",value = "start") String start,
             @RequestParam(name = "end",defaultValue = "2019-12-27",value = "end") String end,
             @RequestParam(name = "name",defaultValue = "",value = "name") String name,
             @RequestParam(name = "_search", defaultValue = "false") String _search,
             @RequestParam(name = "nd", defaultValue = "1569403104246") String nd,
-            @RequestParam(name = "rows", defaultValue = "1000 ") String rows,
+            @RequestParam(name = "rows", defaultValue = "500 ") String rows,
             @RequestParam(name = "page", defaultValue = "1") String page,
             @RequestParam(name = "sidx", defaultValue = "IN_TIME DESC NULLS LAST,PERSONNEL_STATUS") String sidx,
             @RequestParam(name = "sord", defaultValue = "desc") String sord,
@@ -195,7 +204,7 @@ public class SensorAndPersonInformationController {
             @RequestParam(name = "sidx", defaultValue = "MINE_ID ASC,IN_TIME desc,STAFF_ID") String sidx,
             @RequestParam(name = "sord", defaultValue = "asc") String sord,
             @RequestParam(name = "name", defaultValue = "",value = "name") String name,
-            @RequestParam(name = "mine", defaultValue = "430481010327",value = "mine") String mine,
+            @RequestParam(name = "mine", defaultValue = "430481012074",value = "mine") String mine,
             @RequestParam(name = "station", defaultValue = "", value = "station") String station) {
 
         LocalDateTime localDateTime = LocalDateTime.now();

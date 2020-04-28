@@ -15,94 +15,7 @@ export default {
     let that = this;
     Cesium.Ion.defaultAccessToken =
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkMTE1NzAzZi0wYjZjLTQ2NGUtYWU1MS1iOWJkNDA1Mzg3MTgiLCJpZCI6MTYyOTUsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NzAxMDI2ODl9.FXBVovN5TZRrwtehWu-ACOQS05yxGa1tRRtBgxP6M9g";
-    function underground(t, i) {
-      this._viewer = t;
-      var n = Cesium.defaultValue(i, {});
-      (this._depth = Cesium.defaultValue(n.depth, 500)),
-        (this._alpha = Cesium.defaultValue(n.alpha, 0.5)),
-        (this.enable = Cesium.defaultValue(n.enable, !1));
-    }
-    underground.prototype._updateImageryLayersAlpha = function(e) {
-      for (
-        var t = this._viewer.imageryLayers._layers, i = 0, a = t.length;
-        i < a;
-        i++
-      )
-        t[i].alpha = e;
-    };
-    underground.prototype._historyOpts = function() {
-      var e = {};
-      (e.alpha = Cesium.clone(
-        this._viewer.imageryLayers._layers[0] &&
-          this._viewer.imageryLayers._layers[0].alpha
-      )),
-        (e.highDynamicRange = Cesium.clone(
-          this._viewer.scene.highDynamicRange
-        )),
-        (e.skyShow = Cesium.clone(this._viewer.scene.skyAtmosphere.show)),
-        (e.skyBoxShow = Cesium.clone(this._viewer.scene.skyBox.show)),
-        (e.depthTest = Cesium.clone(
-          this._viewer.scene.globe.depthTestAgainstTerrain
-        )),
-        this._viewer.scene.globe._surface &&
-          this._viewer.scene.globe._surface._tileProvider &&
-          this._viewer.scene.globe._surface._tileProvider._renderState &&
-          (e.blending = Cesium.clone(
-            this._viewer.scene.globe._surface._tileProvider._renderState
-              .blending
-          )),
-        (this._oldViewOpts = e);
-    };
-    underground.prototype.activate = function() {
-      if (!this._enable) {
-        (this._enable = !0),
-          this._historyOpts(),
-          this._updateImageryLayersAlpha(this._alpha);
-        var e = this._viewer;
-        (Cesium.ExpandByMars.underEarth.cullFace = !1),
-          (Cesium.ExpandByMars.underEarth.enable = !0),
-          (Cesium.ExpandByMars.underEarth.enableDepth = this._depth),
-          (Cesium.ExpandByMars.underEarth.enableSkirt = !0),
-          (e.scene.globe.depthTestAgainstTerrain = !0),
-          (e.scene.highDynamicRange = !1),
-          (e.scene.skyAtmosphere.show = !1),
-          (e.scene.skyBox.show = !1),
-          e.scene.globe._surface._tileProvider &&
-            e.scene.globe._surface._tileProvider._renderState &&
-            e.scene.globe._surface._tileProvider._renderState
-              .blending; /*&& (e.scene.globe._surface._tileProvider._renderState.blending.enabled = !0,
-        e.scene.globe._surface._tileProvider._renderState.blending.equationRgb = Cesium.BlendEquation.ADD,
-        e.scene.globe._surface._tileProvider._renderState.blending.equationAlpha = Cesium.BlendEquation.ADD,
-        e.scene.globe._surface._tileProvider._renderState.blending.functionSourceAlpha = Cesium.BlendFunction.ONE,
-        e.scene.globe._surface._tileProvider._renderState.blending.functionSourceRgb = Cesium.BlendFunction.ONE,
-        e.scene.globe._surface._tileProvider._renderState.blending.functionDestinationAlpha = Cesium.BlendFunction.ZERO,
-        e.scene.globe._surface._tileProvider._renderState.blending.functionDestinationRgb = Cesium.BlendFunction.ZERO)*/
-      }
-    };
-    underground.prototype.disable = function() {
-      if (this._enable) {
-        (this._enable = !1),
-          this._updateImageryLayersAlpha(this._oldViewOpts.alpha);
-        var e = this._viewer;
-        (Cesium.ExpandByMars.underEarth.cullFace = void 0),
-          (Cesium.ExpandByMars.underEarth.enable = !1),
-          (Cesium.ExpandByMars.underEarth.enableDepth = 0),
-          (Cesium.ExpandByMars.underEarth.enableSkirt = !1),
-          (e.scene.globe.depthTestAgainstTerrain = this._oldViewOpts.depthTest),
-          (e.scene.skyBox.show = this._oldViewOpts.skyBoxShow),
-          (e.scene.highDynamicRange = this._oldViewOpts.highDynamicRange),
-          (e.scene.skyAtmosphere.show = this._oldViewOpts.skyShow); /*,
-        void 0 != this._oldViewOpts.blending && (e.scene.globe._surface._tileProvider._renderState.blending = this._oldViewOpts.blending)*/
-      }
-    };
-    underground.prototype.destroy = function() {
-      delete this._viewer,
-        delete this._alpha,
-        delete this._depth,
-        delete this._enable,
-        delete this._oldViewOpts;
-    };
-
+   
     //加载地形数据
     var worldTerrain = Cesium.createWorldTerrain({
       //设置水面效果
@@ -124,8 +37,16 @@ export default {
 
     //加载viewer（Cesium.Viewer类）实现基本框架的加载
     var viewer = new Cesium.Viewer("cesiumContainer", {
-      baseLayerPicker: false
+      terrainProvider: Cesium.createWorldTerrain(),
+      baseLayerPicker: false,
+      requestRenderMode: true, // 启用请求渲染模式
+      scene3DOnly: true, // 每个几何实例将只能以3D渲染以节省GPU内存
+      //sceneMode: 3, // 初始场景模式 1 2D模式 2 2D循环模式 3 3D模式  Cesium.SceneMode
+      sceneMode : Cesium.SceneMode.COLUMBUS_VIEW,
+
     });
+    viewer.scene.globe.baseColor = new Cesium.Color(0, 0, 0, 0);
+   
 
     //英文转中文  
       if (viewer.sceneModePicker) {
@@ -177,15 +98,13 @@ export default {
 
 
 
-    //地下模式
-    var ug = new underground(viewer, {
-      depth: 5000,
-      alpha: 0.6
-    });
-    ug.activate();
+ 
 
     this.$emit("viewer", viewer);
     window.viewer = viewer; //量测工具组件要用
+       window.viewer.camera.flyTo({
+        destination : Cesium.Cartesian3.fromDegrees(112.885665,26.296894,50000)
+   }); 
 
     viewer.scene.debugShowFramesPerSecond = false;
     // 设置光照效果，默认false
